@@ -1,0 +1,76 @@
+<html>
+</head></head>
+<body>
+
+<p id="DiasSemana"></p>
+
+<script language="JavaScript">
+	let dias = ['seg','ter','qua','qui','sex','sab','dom'];
+	console.log(dias);
+		
+	//join junta os elementos ------------------------------------------------
+	let diasTexto = dias.join(' * ');
+	console.log(diasTexto);
+	
+	//onde usar join ?
+	var dadosHtml = document.getElementById("DiasSemana");
+	dadosHtml.innerHTML = dias.join('<hr>');
+	
+	//pop remove e retorna o ultimo elemento ------------------------------------------------
+	let passageiros = ['pessoaX','pessoaA','pessoaD','pessoaC','pessoaW','pessoaZ','pessoaY'];
+	let ultimo = passageiros.pop();
+	console.log('ultimo '+ultimo);
+	//onde usar pop
+	
+	passageiros = ['pessoaX','pessoaA','pessoaD','pessoaC','pessoaW','pessoaZ','pessoaY'];
+	passageiros.sort();//.sort ordena os elementos por ordem alfabética, ou crescente, conforme os elementos
+	console.log(passageiros.join());
+	passageiros.pop();
+	console.log('o último desistiou da viagem, restaram apenas');
+	console.log(passageiros.join());
+	
+	// shift remove e retorna o primeiro elemento ------------------------------------------------
+	passageiros = ['pessoaX','pessoaA','pessoaD','pessoaC','pessoaW','pessoaZ','pessoaY'];
+	passageiros.sort();//.sort ordena os elementos por ordem alfabética, ou crescente, conforme os elementos
+	console.log('Quem é o primeiro a desembarcar ?');
+	console.log(passageiros.shift());
+	passageiros.sort();//.sort ordena os elementos por ordem alfabética, ou crescente, conforme os elementos
+	console.log('Quem é o primeiro a desembarcar ?');
+	console.log(passageiros.shift());
+	
+	let t=passageiros.length;
+	for(let i=0;i<t;i++){
+		if(passageiros.length>0){
+			let k=passageiros.shift();
+			alert(k);
+		}else{
+			alert('Vazio');
+			break;
+		}
+	}
+	
+	// push adiciona elementos e retorna o tamanho do array ------------------------------------------------
+	let produtos = ['mouse', 'teclado', 'monitor'];
+	let total = produtos.length;
+	console.log('Temos '+total+' itens');
+	total = produtos.push('gabinete');
+	console.log('Agora temos '+total+' itens');
+	
+	// filter filtra os elementos baseado em uma condição ------------------------------------------------
+	let precos = [45.50,39.90,100.00,890.50,4500.00];
+	let menores100 = precos.filter(n => n < 100);
+	console.log('Preços menores do que 100 Reais');
+	console.log(menores100);
+	
+	//map Aplica uma função nos elementos ------------------------------------------------
+	let precosAplicarDesconto = precos.map(n => n * 0.90)
+	console.log(precosAplicarDesconto.join(' ; '));
+	
+	//reduce Aplica uma função e unifica o array em um único elmento ------------------------------------------------
+	const soma = (n, m) => n + m;
+	let totalPrecosMenores100 = menores100.reduce(soma);
+	console.log("soma dos preços menores de 100 Reais "+totalPrecosMenores100);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+</head></head>
+<body>
+
+<script language="JavaScript">
+	let dias = ['seg','ter','qua','qui','sex','sab','dom'];
+	console.log('Comprimento '+dias.length);
+	console.log('primeiro '+dias[0]);
+	console.log('ultimo '+dias[6]);
+	
+	for(let i=0;i<dias.length;i++){
+		console.log(i+ ' ' + dias[i]);
+		//alert(i+ ' ' + dias[i])	
+	}
+	
+	console.log('---forEach =>');
+	dias.forEach(dias => {  
+		console.log(dias)  
+	})  
+  
+	console.log('---forEach function');
+	dias.forEach(function(dias){  
+		console.log(dias)  
+	})  
+	
+	console.log('---of');
+	for (let dia of dias){  
+		console.log(dia)  
+	}
+	
+	console.log("---descrescente");
+	for(let i=(dias.length-1);i>=0;i--){
+		console.log(dias[i]);	
+	}
+	
+		
+</script>
+
+</body>
+</html>
